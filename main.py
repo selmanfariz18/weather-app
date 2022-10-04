@@ -10,7 +10,7 @@ def wea(c):
     CITY = c
 
     # Your API key
-    API_KEY = "--------"
+    API_KEY = "73e5b3f84f4f1cf86dbabb91c155c1b2"
 
     # updating the URL
     URL = BASE_URL + "q=" + CITY + "&appid=" + API_KEY
@@ -28,9 +28,9 @@ def wea(c):
         main = data['main']
     
     # getting temperature
-        temperature = main['temp']
+        temperature = int(main['temp']-273.15)
     # getting feel like
-        temp_feel_like = main['feels_like']  
+        temp_feel_like = int(main['feels_like']-273.15)  
     # getting the humidity
         humidity = main['humidity']
     # getting the pressure
@@ -43,9 +43,9 @@ def wea(c):
         
         b=Label(text='city='+c)
         b.place(x=30,y=100)
-        b1=Label(text="Temperature="+str(temperature))
+        b1=Label(text="Temperature="+str(temperature)+'°C')
         b1.place(x=30,y=120)
-        b2=Label(text="Feels Like="+str(temp_feel_like))
+        b2=Label(text="Feels Like="+str(temp_feel_like)+'°C')
         b2.place(x=30,y=140)
         b3=Label(text="Humidity="+str(humidity))
         b3.place(x=30,y=160)
