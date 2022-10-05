@@ -10,7 +10,7 @@ def wea(c):
     CITY = c
 
     # Your API key
-    API_KEY = "73e5b3f84f4f1cf86dbabb91c155c1b2"
+    API_KEY = "____________________"
 
     # updating the URL
     URL = BASE_URL + "q=" + CITY + "&appid=" + API_KEY
